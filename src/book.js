@@ -7,9 +7,12 @@ function buildMainCharacter(name, age, pronouns) {
 }
 
 function saveReview(review, reviews) {
-  reviews.push(review);
-  
-  return [...new Set(reviews)];
+  if (reviews.includes(review)) {
+    return reviews;
+  } else {
+    reviews.push(review);
+    return reviews;
+  }
 }
 
 module.exports = {
